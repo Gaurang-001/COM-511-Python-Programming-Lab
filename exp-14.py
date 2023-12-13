@@ -1,18 +1,10 @@
-# Specify the file path
-file_path = r"C:\Users\ACER\OneDrive\Desktop\Python\input.txt"
+# Get user input for three lines
+lines = []
+for i in range(3):
+    line = input(f"Enter line {i+1}: ")
+    lines.append(line)
 
-# Read and print the content of the file
-with open(file_path, "r") as file:
-    file_content = file.read()
-    print("Content of the file:")
-    print(file_content)
-
-# Extract unique words and sort them alphabetically
-words = file_content.split()
-unique_words = sorted(set(words))
-
-# Print unique words
-print("\nUnique words in alphabetical order:")
-for word in unique_words:
-    print(word)
-
+# Write the lines to a text file
+with open("MyFile.txt", "w") as file:
+    for line in lines:
+        file.write(line + "\n")
